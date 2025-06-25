@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoBarBerly - Salon Appointment Booking</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.1.5/css/intlTelInput.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="https://www.gobarberly.com" target="_blank">
+            <img src="https://cdn.prod.website-files.com/67e490b73dd414300e9b23f7/67ed1380bec349b78728a1fa_B.jpg" alt="GoBarBerly Logo" class="header-logo">
+        </a>
+        <div class="header-tagline">🙏🏾 for your business</div>
+    </header>
+    
+    <div class="container">
+        <div class="booking-title">
+            <h1>Book Your Appointment</h1>
+            <p>Follow the easy steps to book your salon appointment</p>
+        </div>
+        
+        <div class="booking-container">
+            <div class="booking-progress">
+                <div class="booking-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-name">Services</div>
+                </div>
+                <div class="booking-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-name">Barber</div>
+                </div>
+                <div class="booking-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-name">Date</div>
+                </div>
+                <div class="booking-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-name">Time</div>
+                </div>
+                <div class="booking-step" data-step="5">
+                    <div class="step-number">5</div>
+                    <div class="step-name">Add-ons</div>
+                </div>
+                <div class="booking-step" data-step="6">
+                    <div class="step-number">6</div>
+                    <div class="step-name">Your Info</div>
+                </div>
+            </div>
+            
+            <div class="booking-content">
+                <!-- Step 1: Services -->
+                <div class="step-content active" id="step1">
+                    <h2>Select a Service</h2>
+                    <p>Choose from our premium salon services</p>
+                    
+                    <div class="service-grid">
+                        <div class="service-card" data-id="haircut" data-price="600" data-duration="45">
+                            <div class="service-icon"><i class="fas fa-cut"></i></div>
+                            <div class="service-name">Haircut</div>
+                            <div class="service-price">₹600</div>
+                            <div class="duration-badge">45 mins</div>
+                        </div>
+                        <div class="service-card" data-id="shave" data-price="350" data-duration="30">
+                            <div class="service-icon"><i class="fas fa-razor"></i></div>
+                            <div class="service-name">Shave</div>
+                            <div class="service-price">₹350</div>
+                            <div class="duration-badge">30 mins</div>
+                        </div>
+                        <div class="service-card" data-id="haircut-shave" data-price="900" data-duration="75">
+                            <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="service-name">Haircut + Shave</div>
+                            <div class="service-price">₹900</div>
+                            <div class="duration-badge">75 mins</div>
+                        </div>
+                        <div class="service-card" data-id="color" data-price="1200" data-duration="90">
+                            <div class="service-icon"><i class="fas fa-palette"></i></div>
+                            <div class="service-name">Hair Coloring</div>
+                            <div class="service-price">₹1200</div>
+                            <div class="duration-badge">90 mins</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Barber -->
+                <div class="step-content" id="step2">
+                    <h2>Select a Barber</h2>
+                    <p>Choose your preferred stylist</p>
+                    
+                    <div class="barber-grid">
+                        <div class="barber-card" data-id="barber1">
+                            <div class="barber-icon"><i class="fas fa-user"></i></div>
+                            <div class="barber-name">Arjun Sharma</div>
+                            <div class="barber-speciality">Master Barber</div>
+                        </div>
+                        <div class="barber-card" data-id="barber2">
+                            <div class="barber-icon"><i class="fas fa-user"></i></div>
+                            <div class="barber-name">Priya Patel</div>
+                            <div class="barber-speciality">Color Specialist</div>
+                        </div>
+                        <div class="barber-card" data-id="barber3">
+                            <div class="barber-icon"><i class="fas fa-user"></i></div>
+                            <div class="barber-name">Vikram Singh</div>
+                            <div class="barber-speciality">Style Expert</div>
+                        </div>
+                        <div class="barber-card" data-id="barber4">
+                            <div class="barber-icon"><i class="fas fa-user"></i></div>
+                            <div class="barber-name">Neha Kapoor</div>
+                            <div class="barber-speciality">Senior Stylist</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Date -->
+                <div class="step-content" id="step3">
+                    <h2>Select a Date</h2>
+                    <p>Choose your preferred appointment date</p>
+                    
+                    <div class="date-container">
+                        <input type="text" id="date-picker" class="date-picker" placeholder="Select date">
+                    </div>
+                </div>
+                
+                <!-- Step 4: Time -->
+                <div class="step-content" id="step4">
+                    <h2>Select a Time</h2>
+                    <p>Choose your preferred appointment time</p>
+                    
+                    <div class="time-grid" id="time-slots">
+                        <!-- Time slots will be generated dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Step 5: Add-ons -->
+                <div class="step-content" id="step5">
+                    <h2>Add Extra Services</h2>
+                    <p>Enhance your visit with these premium add-ons</p>
+                    
+                    <div class="addon-grid">
+                        <div class="addon-card" data-id="massage" data-price="400" data-duration="30">
+                            <div class="addon-icon"><i class="fas fa-hands"></i></div>
+                            <div class="addon-name">Scalp Massage</div>
+                            <div class="addon-price">₹400</div>
+                            <div class="duration-badge">30 mins</div>
+                        </div>
+                        <div class="addon-card" data-id="facial" data-price="600" data-duration="30">
+                            <div class="addon-icon"><i class="fas fa-spa"></i></div>
+                            <div class="addon-name">Mini Facial</div>
+                            <div class="addon-price">₹600</div>
+                            <div class="duration-badge">30 mins</div>
+                        </div>
+                        <div class="addon-card" data-id="treatment" data-price="500" data-duration="30">
+                            <div class="addon-icon"><i class="fas fa-pump-soap"></i></div>
+                            <div class="addon-name">Deep Conditioning</div>
+                            <div class="addon-price">₹500</div>
+                            <div class="duration-badge">30 mins</div>
+                        </div>
+                        <div class="addon-card" data-id="eyebrows" data-price="250" data-duration="30">
+                            <div class="addon-icon"><i class="fas fa-eye"></i></div>
+                            <div class="addon-name">Eyebrow Shaping</div>
+                            <div class="addon-price">₹250</div>
+                            <div class="duration-badge">30 mins</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 6: Customer Info -->
+                <div class="step-content" id="step6">
+                    <h2>Your Information</h2>
+                    <p>Please provide your contact details</p>
+                    
+                    <form id="customer-form">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" class="form-control" required>
+                            <div class="error-message" id="first-name-error">Please enter your first name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" class="form-control" required>
+                            <div class="error-message" id="last-name-error">Please enter your last name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                            <div class="error-message" id="email-error">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="phone-input-container">
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                            <div class="error-message" id="phone-error">Please enter a valid phone number</div>
+                        </div>
+                        <div class="form-group consent-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="sms-consent">
+                                <span class="checkbox-text">I consent to receive SMS notifications about my appointments at GoBarBerly Salon. Standard message and data rates may apply. Reply STOP to opt out at any time.</span>
+                            </label>
+                            <div class="consent-link">
+                                <a href="sms-opt-in-process.html" target="_blank">View our SMS policy</a>
+                            </div>
+                        </div>
+                        <div class="booking-summary">
+                            <div class="summary-title">Booking Summary</div>
+                            <div class="summary-item">
+                                <div class="summary-label">Service:</div>
+                                <div class="summary-value" id="summary-service">-</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Barber:</div>
+                                <div class="summary-value" id="summary-barber">-</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Date:</div>
+                                <div class="summary-value" id="summary-date">-</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Time:</div>
+                                <div class="summary-value" id="summary-time">-</div>
+                            </div>
+                            <div class="summary-item" id="addons-container">
+                                <div class="summary-label">Add-ons:</div>
+                                <div class="summary-value" id="summary-addons">-</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Duration:</div>
+                                <div class="summary-value" id="summary-duration">-</div>
+                            </div>
+                            <div class="summary-item total-row">
+                                <div class="summary-label">Total:</div>
+                                <div class="summary-value" id="summary-total">₹0</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Confirmation Step -->
+                <div class="step-content" id="confirmation">
+                    <div class="confirmation-message">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2 class="confirmation-title">Booking Confirmed!</h2>
+                        <p>Your appointment has been successfully booked.</p>
+                        <div class="confirmation-details">
+                            <div class="booking-summary">
+                                <div class="summary-title">Appointment Details</div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Service:</div>
+                                    <div class="summary-value" id="conf-service">-</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Barber:</div>
+                                    <div class="summary-value" id="conf-barber">-</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Date:</div>
+                                    <div class="summary-value" id="conf-date">-</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Time:</div>
+                                    <div class="summary-value" id="conf-time">-</div>
+                                </div>
+                                <div class="summary-item" id="conf-addons-container">
+                                    <div class="summary-label">Add-ons:</div>
+                                    <div class="summary-value" id="conf-addons">-</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Duration:</div>
+                                    <div class="summary-value" id="conf-duration">-</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Name:</div>
+                                    <div class="summary-value" id="conf-name">-</div>
+                                </div>
+                                <div class="summary-item total-row">
+                                    <div class="summary-label">Total:</div>
+                                    <div class="summary-value" id="conf-total">₹0</div>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 20px;">
+                                A confirmation has been sent to your email and phone.
+                            </p>
+                            <div class="action-buttons">
+                                <button class="btn btn-calendar" id="add-to-calendar">
+                                    <i class="fas fa-calendar-plus"></i> Add to Calendar
+                                </button>
+                                <button class="btn btn-reschedule" id="reschedule-btn">
+                                    <i class="fas fa-clock"></i> Reschedule
+                                </button>
+                                <button class="btn btn-cancel" id="cancel-btn">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="button-container">
+                    <button class="btn btn-prev" id="prev-btn" disabled>Previous</button>
+                    <button class="btn btn-next" id="next-btn">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div>Made with 🩷 in 🇮🇳</div>
+        <div>© 2025 goBarBerly. All rights reserved.</div>
+    </footer>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://accounts.google.com/gsi/client"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.1.5/js/intlTelInput.min.js"></script>
+
+<!-- Custom Confirmation Dialog -->
+<div id="custom-confirm-dialog" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 8px; text-align: center; width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <h3>Cancel Appointment</h3>
+    <p>Are you sure you want to cancel your appointment?</p>
+    <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+      <button id="custom-cancel-no" class="btn" style="background-color: #e0e0e0; color: #333; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">No</button>
+      <button id="custom-cancel-yes" class="btn" style="background-color: #DB4437; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Yes, Cancel</button>
+    </div>
+  </div>
+</div>  
+<script src="script.js"></script>
+</body>
+</html>
